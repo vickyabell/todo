@@ -1,18 +1,26 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <HelloWorld/>
+    <Header />
+    <Create :todos='todos' />
+    <Todos :todos='todos'  />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld';
+import Header from '@/components/Header';
+import Create from '@/components/Create';
+import Todos from '@/components/Todos';
 
 export default {
   name: 'App',
   components: {
-    HelloWorld,
+    Header,
+    Create,
+    Todos,
   },
+  data: () => ({
+    todos: [],
+  }),
 };
 </script>
 
